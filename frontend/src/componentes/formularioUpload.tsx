@@ -4,6 +4,7 @@ import React from 'react';
 import { Component } from 'react';
 import CarregadorArquivo from '../carregadores/carregadorArquivo';
 
+
 class FormularioUpload extends Component {
     private arquivo: File
     constructor(props) {
@@ -19,11 +20,12 @@ class FormularioUpload extends Component {
 
     public enviarArquivo(evento) {
         evento.preventDefault()
-        console.log(this.arquivo)
-        let carregador = new CarregadorArquivo()
-        carregador.carregar(this.arquivo)
-        evento.target.reset()
-        
+        if(!(this.arquivo === undefined)){
+            let carregador = new CarregadorArquivo()
+            carregador.carregar(this.arquivo)
+            evento.target.reset()
+            this.arquivo = undefined
+        }
     }
 
     render() {

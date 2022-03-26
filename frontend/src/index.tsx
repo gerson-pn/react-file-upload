@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BarraNavegacao titulo='Armazem de arquivos' />
+    <BarraNavegacao titulo='Armazém de arquivos' />
     <FormularioUpload />
     <ListaArquivos />
   </React.StrictMode>,
